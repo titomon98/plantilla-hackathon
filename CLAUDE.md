@@ -212,6 +212,18 @@ npm run dev
 - No hacer DELETE físico de citas; usar cambio de `estado`.
 - Fechas y horas: todo el manejo de disponibilidad se calcula en el backend, el frontend solo consume slots ya calculados.
 
+## Estado del proyecto
+
+- [x] Backend NestJS inicializado (`backend/`, Nest 12, Node 22). Deps del stack instaladas: `@nestjs/typeorm`, `typeorm`, `pg`, `@nestjs/config`, `class-validator`, `class-transformer`. Compila (`npm run build`).
+- [x] Frontend React + Vite inicializado (`frontend/`). Deps: `react-router-dom`, `axios`. Compila (`npm run build`).
+- [ ] Config de conexión a PostgreSQL (`database.config.ts` + `.env`)
+- [ ] Entidades y módulos por dominio (clientes, colaboradoras, servicios, horarios, disponibilidad, citas)
+- [ ] Lógica de cálculo de disponibilidad
+- [ ] Endpoints v1
+- [ ] Vistas del panel público (frontend)
+
+> Nota: `npm install` en el backend requirió `--legacy-peer-deps` (bug de resolución de peers de vitest 4 en npm 10.9.8).
+
 ## 10. Pendiente / fuera de alcance de v1
 
 - Reportes de clientes (frecuencia, recurrencia, servicios más solicitados) — el modelo de datos ya lo soporta, pero la construcción de dashboards/reportes queda para una fase posterior.
